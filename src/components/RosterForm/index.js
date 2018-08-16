@@ -11,7 +11,11 @@ class RosterForm extends Component {
 
   render() {
     return (
-      <div />
+      <form>
+        <label for='team-name'>Team Name</label>
+        <input id='team-name' type='text' name='teamName' placeholder='Champs' required/>
+        <button type='submit'>Generate Team</button>
+      </form>
     )
   }
 }
