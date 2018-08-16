@@ -20,17 +20,20 @@ class RosterForm extends Component {
 
   render() {
     return (
-      <form>
-        <label for='team-name'>Team Name</label>
-        <input
-          id='team-name'
-          type='text'
-          name='teamName'
-          placeholder='Champs'
-          onChange={this.handleOnChange}
-          required/>
-        <button type='submit' disabled={!this.state.teamName}>Generate Team</button>
-      </form>
+      <section>
+        <h3>Create a team</h3>
+        <form>
+          <label htmlFor='team-name'>Team Name</label>
+          <input
+            id='team-name'
+            type='text'
+            name='teamName'
+            placeholder='Champs'
+            onChange={this.handleOnChange}
+            required/>
+          <button type='submit' disabled={!this.state.teamName}>submit</button>
+        </form>
+      </section>
     )
   }
 }
