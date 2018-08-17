@@ -26,7 +26,7 @@ class StarterCards extends Component {
     let playerNames = []
     let players = []
 
-    while (playerNames.length < 15) {
+    while (playerNames.length < 10) {
       let randomName = faker.name.findName()
       if (randomName.length < 16) {
         playerNames.push(randomName)
