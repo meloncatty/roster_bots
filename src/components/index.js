@@ -1,7 +1,7 @@
 import RosterForm from './RosterForm'
-import PlayerCards from './PlayerCards'
+import StarterCards from './StarterCards'
 
 export {
   RosterForm,
-  PlayerCards
+  StarterCards
 }

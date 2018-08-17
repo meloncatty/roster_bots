@@ -3,7 +3,7 @@ import faker from 'faker'
 import roboAvatar from '../../assets/robot_avatar00.png'
 import './styles.css'
 
-class PlayerCards extends Component {
+class StarterCards extends Component {
   constructor() {
     super()
 
@@ -125,4 +125,4 @@ class PlayerCards extends Component {
   }
 }
 
-export default PlayerCards
+export default StarterCards
