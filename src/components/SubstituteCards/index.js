@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import faker from 'faker'
+import * as helpers from '../../helpers'
 import roboAvatar from '../../assets/robot_avatar00.png'
 
 class SubstituteCards extends Component {
@@ -57,7 +58,7 @@ class SubstituteCards extends Component {
           speed: stats[0],
           agility: stats[1],
           strength: stats[2],
-          id: this.generateUUID(),
+          id: helpers.generateUUID(),
           error: false
         }
         const isDupe = this.checkDupes(newPlayer)
@@ -100,22 +101,6 @@ class SubstituteCards extends Component {
   handleNameChange = (e, player) => {
     const { value } = e.target
     player.name = value
-  }
-
-  generateUUID = () => {
-    const alpha = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z']
-    const numeric = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0]
-    const firstPart = []
-    const secondPart = []
-    while (firstPart.length < 3) {
-      const randomIndex = Math.ceil(Math.random() * 26)
-      firstPart.push(alpha[randomIndex])
-    }
-    while (secondPart.length < 4) {
-      const randomIndex = Math.ceil(Math.random() * 9)
-      secondPart.push(numeric[randomIndex])
-    }
-    return firstPart.join("").concat(secondPart.join(""))
   }
 
   render() {
