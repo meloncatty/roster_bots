@@ -26,13 +26,13 @@ class RosterForm extends Component {
   render () {
     return (
       <form className='roster-form' onSubmit={this.handleSubmit}>
-        <label htmlFor='team-name' className='roster-form-label'>Create A Team</label>
+        <label htmlFor='team-name' className='roster-form-label'>Create a Team</label>
 
           <input
             id='team-name'
             type='text'
             name='teamName'
-            placeholder='Champs'
+            placeholder='Team Name'
             className='team-name-input'
             onChange={this.handleOnChange}
             required />
@@ -43,7 +43,7 @@ class RosterForm extends Component {
           >
             submit
           </button>
-        
+
       </form>
     )
   }
