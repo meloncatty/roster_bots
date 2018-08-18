@@ -83,11 +83,10 @@ class SubstituteCards extends Component {
         person.error = true
         this.forceUpdate()
       } else {
-        this.state.players.find(person => {
-          if (person.error) {
-            person.error = false
-          }
-        })
+        const player = this.state.players.find(person => person.error = false)
+        if (player) {
+          player.error = false
+        }
         person.error = false
         this.forceUpdate()
       }

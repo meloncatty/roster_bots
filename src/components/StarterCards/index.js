@@ -84,11 +84,10 @@ class StarterCards extends Component {
         person.error = true
         this.forceUpdate()
       } else {
-        this.state.players.find(person => {
-          if (person.error) {
-            person.error = false
-          }
-        })
+        const player = this.state.players.find(player => player.error)
+        if (player) {
+          player.error = false
+        }
         person.error = false
         this.forceUpdate()
       }
