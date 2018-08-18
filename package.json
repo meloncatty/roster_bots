@@ -19,10 +19,6 @@
     "eject": "react-scripts eject"
   },
   "standard": {
-    "parser": "babel-eslint",
-    "envs": [
-      "jest",
-      "enzyme"
-    ]
+    "parser": "babel-eslint"
   }
 }
