@@ -34,6 +34,10 @@ class StarterCards extends Component {
     )
   }
 
+  checkNameDupes = player => {
+    return this.state.players.find(person => person.name === player.name && person !== player)
+  }
+
   generatePlayers = () => {
     let playerNames = []
     let players = []
@@ -112,6 +116,18 @@ class StarterCards extends Component {
   handleNameChange = (e, player) => {
     const { value } = e.target
     player.name = value
+    this.setState({
+      players: this.state.players
+    })
+    const isDupe = this.checkNameDupes(player)
+    if (isDupe) {
+      isDupe.error = true
+      player.error = true
+
+      this.setState({
+        players: this.state.players
+      })
+    }
   }
 
   render () {
