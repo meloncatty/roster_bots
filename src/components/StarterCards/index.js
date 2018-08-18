@@ -37,7 +37,7 @@ class StarterCards extends Component {
       let stats = []
 
       while (stats.length < 3) {
-        stats.push(Math.floor(Math.random() * 50))
+        stats.push(Math.floor(Math.random() * 33))
       }
       const total = this.checkTotal(stats)
 
