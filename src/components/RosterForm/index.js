@@ -1,8 +1,10 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux';
+import getTeamName from '../../actions'
 
 class RosterForm extends Component {
-  constructor() {
-    super()
+  constructor(props) {
+    super(props)
 
     this.state = {
       teamName: ''
@@ -14,15 +16,17 @@ class RosterForm extends Component {
     this.setState({ [name] : value })
   }
 
-  handleOnSubmit = e => {
+  handleSubmit = e => {
     e.preventDefault()
+    this.props.getTeamName(this.state.teamName)
+    this.props.history.push('/players')
   }
 
   render() {
     return (
       <section>
         <h3>Create a team</h3>
-        <form>
+        <form onSubmit={this.handleSubmit}>
           <label htmlFor='team-name'>Team Name</label>
           <input
             id='team-name'
@@ -38,4 +42,12 @@ class RosterForm extends Component {
   }
 }
 
-export default RosterForm
+export const mapStateToProps = state => ({
+  teamName: state.teamName
+})
+
+export const mapDispatchToProps = dispatch => ({
+  getTeamName: name => dispatch(getTeamName(name))
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(RosterForm)

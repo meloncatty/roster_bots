@@ -1,10 +1,14 @@
-import React from 'react'
-import { PlayersContainer } from './components'
+import React, { Fragment } from 'react'
+import { Route } from 'react-router-dom'
+import { RosterForm, PlayersContainer } from './components'
 
 
 const App = () => {
   return (
-      <PlayersContainer />
+    <Fragment>
+      <Route path='/' exact={true} component={RosterForm} />
+      <Route path='/players' exact={true} component={PlayersContainer} />
+    </Fragment>
   )
 }
 
