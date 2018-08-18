@@ -33,7 +33,9 @@ class SubstituteCards extends Component {
   }
 
   checkNameDupes = player => {
-    return this.state.players.find(person => person.name === player.name && person !== player)
+    return this.state.players.find(
+      person => person.name === player.name && person !== player
+    )
   }
 
   generatePlayers = () => {
