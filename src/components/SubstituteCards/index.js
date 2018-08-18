@@ -107,9 +107,12 @@ class SubstituteCards extends Component {
           players: this.state.players
         })
       }
-    } else if (total >= 100) {
+    } else {
       e.target.value = parseInt(e.target.value, 10) - 1
       person[e.target.name] = parseInt(e.target.value, 10)
+      this.setState({
+        players: this.state.players
+      })
     }
   }
 
