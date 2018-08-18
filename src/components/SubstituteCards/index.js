@@ -84,7 +84,7 @@ class SubstituteCards extends Component {
         person.error = true
         this.forceUpdate()
       } else {
-        const player = this.state.players.find(person => person.error = false)
+        const player = this.state.players.find(person => person.error)
         if (player) {
           player.error = false
         }
@@ -95,7 +95,6 @@ class SubstituteCards extends Component {
       e.target.value = parseInt(e.target.value, 10) - 1
       person[e.target.name] = parseInt(e.target.value, 10)
     }
-    console.log(player.id)
   }
 
   handleNameChange = (e, player) => {

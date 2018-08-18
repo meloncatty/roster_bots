@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
-import { connect } from 'react-redux';
+import { connect } from 'react-redux'
 import getTeamName from '../../actions'
 
 class RosterForm extends Component {
-  constructor(props) {
+  constructor (props) {
     super(props)
 
     this.state = {
@@ -13,7 +13,7 @@ class RosterForm extends Component {
 
   handleOnChange = e => {
     const { value, name } = e.target
-    this.setState({ [name] : value })
+    this.setState({ [name]: value })
   }
 
   handleSubmit = e => {
@@ -22,7 +22,7 @@ class RosterForm extends Component {
     this.props.history.push('/players')
   }
 
-  render() {
+  render () {
     return (
       <section>
         <h3>Create a team</h3>
@@ -34,7 +34,7 @@ class RosterForm extends Component {
             name='teamName'
             placeholder='Champs'
             onChange={this.handleOnChange}
-            required/>
+            required />
           <button type='submit' disabled={!this.state.teamName}>submit</button>
         </form>
       </section>
