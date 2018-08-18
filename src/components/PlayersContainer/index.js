@@ -1,8 +1,14 @@
 import React from 'react'
+import {StarterCards, SubstituteCards} from '../'
 
 const PlayersContainer = () => {
   return (
-    <div />
+    <section>
+      <h1>Starters</h1>
+      <StarterCards />
+      <h1>Substitutes</h1>
+      <SubstituteCards />
+    </section>
   )
 }
 
