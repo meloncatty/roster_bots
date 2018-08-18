@@ -6,8 +6,8 @@ import { RosterForm, PlayersContainer } from './components'
 const App = () => {
   return (
     <Fragment>
-      <RosterForm />
-      <Route path='/players' component={PlayersContainer}/>
+      <Route path='/' exact={true} component={RosterForm} />
+      <Route path='/players' exact={true} component={PlayersContainer} />
     </Fragment>
   )
 }
