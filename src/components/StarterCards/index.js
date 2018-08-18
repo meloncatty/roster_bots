@@ -17,10 +17,9 @@ class StarterCards extends Component {
     this.generatePlayers()
   }
 
-  checkTotal = stats => {
+  getAttributeTotal = stats => {
     const add = (x, y) => x + y
-    const total = stats.reduce(add)
-    return total
+    return stats.reduce(add)
   }
 
   checkDupes = player => {
@@ -55,7 +54,7 @@ class StarterCards extends Component {
       while (stats.length < 3) {
         stats.push(Math.floor(Math.random() * 33))
       }
-      const total = this.checkTotal(stats)
+      const total = this.getAttributeTotal(stats)
 
       if (total < 100) {
         const newPlayer = {
@@ -77,7 +76,7 @@ class StarterCards extends Component {
 
   handleAttributeChange = (e, player) => {
     const stats = Object.values(player).slice(1, 4)
-    let total = this.checkTotal(stats)
+    let total = this.getAttributeTotal(stats)
 
     const person = this.state.players.find(person => person.name === player.name)
     if (total < 100) {
