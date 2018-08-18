@@ -32,11 +32,11 @@ export const getAttributeTotal = stats => {
     return stats.reduce(add)
   }
 
-export const generatePlayers = playerCount => {
+export const generatePlayers = () => {
   let playerNames = []
   let players = []
 
-  while (playerNames.length < playerCount) {
+  while (playerNames.length < 15) {
     let randomName = faker.name.findName()
     if (randomName.length < 16) {
       playerNames.push(randomName)
