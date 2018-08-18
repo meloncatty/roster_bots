@@ -26,8 +26,11 @@ class RosterForm extends Component {
   render () {
     return (
       <form className='roster-form' onSubmit={this.handleSubmit}>
-        <label htmlFor='team-name' className='roster-form-label'>Create a Team</label>
-
+        <label
+          htmlFor='team-name'
+          className='roster-form-label'>
+            Create a Team
+        </label>
           <input
             id='team-name'
             type='text'
@@ -35,7 +38,8 @@ class RosterForm extends Component {
             placeholder='Team Name'
             className='team-name-input'
             onChange={this.handleOnChange}
-            required />
+            required
+          />
           <button
             type='submit'
             disabled={!this.state.teamName}
@@ -43,7 +47,6 @@ class RosterForm extends Component {
           >
             submit
           </button>
-
       </form>
     )
   }
