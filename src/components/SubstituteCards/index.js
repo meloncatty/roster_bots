@@ -97,6 +97,11 @@ class SubstituteCards extends Component {
     console.log(player.id)
   }
 
+  handleNameChange = (e, player) => {
+    const { value } = e.target
+    player.name = value
+  }
+
   generateUUID = () => {
     const alpha = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z']
     const numeric = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0]
@@ -119,7 +124,11 @@ class SubstituteCards extends Component {
         <div className={player.error ? 'error' : 'player-card'} key={index}>
           <div className="player-card-heading">
             <h2 className="player-name">
-              {player.name}
+              <input
+                type='text'
+                defaultValue={player.name}
+                onChange={e => this.handleNameChange(e, player)}
+              />
             </h2>
             <div className="player-avatar-container">
               <img className="player-avatar" src={roboAvatar} alt='Team member avatar'/>
