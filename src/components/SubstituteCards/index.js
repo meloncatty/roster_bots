@@ -69,7 +69,7 @@ class SubstituteCards extends Component {
     this.setState({ players })
   }
 
-  handleOnChange = (e, player) => {
+  handleAttributeChange = (e, player) => {
     const stats = Object.values(player).slice(1, 4)
     let total = this.checkTotal(stats)
     const person = this.state.players.find(person => person.name === player.name)
@@ -133,7 +133,7 @@ class SubstituteCards extends Component {
               name='speed'
               disabled={false}
               onChange={
-                e => this.handleOnChange(e, player)
+                e => this.handleAttributeChange(e, player)
               }
               className='player-attribute-input'
               type='number'
@@ -146,7 +146,7 @@ class SubstituteCards extends Component {
               min='0'
               name='agility'
               onChange={
-                e => this.handleOnChange(e, player)
+                e => this.handleAttributeChange(e, player)
               }
               className='player-attribute-input'
               type='number'
@@ -159,7 +159,7 @@ class SubstituteCards extends Component {
               min='0'
               name='strength'
               onChange={
-                e => this.handleOnChange(e, player)
+                e => this.handleAttributeChange(e, player)
               }
               className='player-attribute-input'
               type='number'
