@@ -22,6 +22,17 @@ class StarterCards extends Component {
     return total
   }
 
+  checkDupes = player => {
+    return this.state.players.find(
+      person => (
+        person.speed === player.speed &&
+        person.strength === player.strength &&
+        person.agility === player.agility &&
+        person.name !== player.name
+      )
+    )
+  }
+
   generatePlayers = () => {
     let playerNames = []
     let players = []
@@ -42,26 +53,45 @@ class StarterCards extends Component {
       const total = this.checkTotal(stats)
 
       if (total < 100) {
-        players.push({
+        const newPlayer = {
           name: player,
           speed: stats[0],
           agility: stats[1],
           strength: stats[2],
-          id: this.generateUUID()
-        })
-
+          id: this.generateUUID(),
+          error: false
+        }
+        const isDupe = this.checkDupes(newPlayer)
+        if (!isDupe) {
+          players.push(newPlayer)
+        }
       }
     })
     this.setState({ players })
   }
 
   handleOnChange = (e, player) => {
-    const stats = Object.values(player).slice(1)
+    const stats = Object.values(player).slice(1, 4)
     let total = this.checkTotal(stats)
-    const person = this.state.players.find(person => person.name === player.name)
 
+    const person = this.state.players.find(person => person.name === player.name)
     if (total < 100) {
       person[e.target.name] = parseInt(e.target.value, 10)
+      const isDupe = this.checkDupes(person)
+      if (isDupe) {
+        e.target.value = e.target.value === 0 ? 0 : parseInt(e.target.value, 10) - 1
+        isDupe.error = true
+        person.error = true
+        this.forceUpdate()
+      } else {
+        this.state.players.find(person => {
+          if (person.error) {
+            person.error = false
+          }
+        })
+        person.error = false
+        this.forceUpdate()
+      }
     } else if (total >= 100) {
       e.target.value = parseInt(e.target.value, 10) - 1
       person[e.target.name] = parseInt(e.target.value, 10)
@@ -87,7 +117,7 @@ class StarterCards extends Component {
   render() {
     return this.state.players.map((player, index) => {
       return (
-        <div className="player-card" key={index}>
+        <div className={player.error ? 'error' : 'player-card'} key={index}>
           <div className="player-card-heading">
             <h2 className="player-name">
               {player.name}
