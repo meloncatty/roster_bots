@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react'
 import { Route } from 'react-router-dom'
 import { RosterForm, PlayersContainer } from './components'
-import './App.css'
+import './styles.css'
 
 const App = () => {
   return (
