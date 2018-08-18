@@ -73,23 +73,34 @@ class SubstituteCards extends Component {
   handleAttributeChange = (e, player) => {
     const stats = Object.values(player).slice(1, 4)
     let total = this.checkTotal(stats)
-    const person = this.state.players.find(person => person.name === player.name)
 
+    const person = this.state.players.find(person => person.name === player.name)
     if (total < 100) {
       person[e.target.name] = parseInt(e.target.value, 10)
+
+      this.setState({
+        players: this.state.players
+      })
+
       const isDupe = this.checkDupes(person)
       if (isDupe) {
-        e.target.value = e.target.value === 0 ? 0 : parseInt(e.target.value, 10) - 1
         isDupe.error = true
         person.error = true
-        this.forceUpdate()
+
+        this.setState({
+          players: this.state.players
+        })
       } else {
-        const player = this.state.players.find(person => person.error)
-        if (player) {
-          player.error = false
-        }
+        this.state.players.forEach(player => {
+          if (player.error) {
+              player.error = false
+          }
+        })
         person.error = false
-        this.forceUpdate()
+
+        this.setState({
+          players: this.state.players
+        })
       }
     } else if (total >= 100) {
       e.target.value = parseInt(e.target.value, 10) - 1
