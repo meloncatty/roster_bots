@@ -9,17 +9,21 @@ class PlayersContainer extends Component {
   }
 
   render() {
-    console.log(this.props.teamName)
     return (
       <main className='cards-container'>
-        <h2>Starters</h2>
-        <section className='starters-container'>
-          <StarterCards />
-        </section>
-        <h2>Substitutes</h2>
-        <section className='substitutes-container'>
-          <SubstituteCards />
-        </section>
+        <h1>{this.props.teamName}</h1>
+        <div>
+          <h2>Starters</h2>
+          <section className='starters-container'>
+            <StarterCards />
+          </section>
+        </div>
+        <div>
+          <h2>Substitutes</h2>
+          <section className='substitutes-container'>
+            <SubstituteCards />
+          </section>
+        </div>
       </main>
     )
   }
