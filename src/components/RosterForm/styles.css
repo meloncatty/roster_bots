@@ -1,0 +1,50 @@
+.roster-form {
+  display: flex;
+  flex-direction: column;
+  width: 280px;
+  display: inline-block;
+}
+
+.team-name-input {
+  width: 250px;
+  height: 20px;
+  padding: 10px;
+  margin: 0;
+  border: 2px solid rgb(34, 49, 63);
+  border-radius: 4px;
+  font-size: 1em;
+  margin-top: 15px;
+  outline: none;
+}
+
+.roster-form-label {
+  font-size: 1.2em;
+}
+
+.submit-roster-button {
+  border-radius: 4px;
+  height: 44px;
+  margin-top: 8px;
+  width: 274px;
+  padding: 10px;
+  border: 2px solid rgb(51, 110, 123);
+  background: rgb(51, 110, 123);
+  font-size: 1em;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: rgb(252, 252, 252);
+}
+
+.submit-roster-button[disabled] {
+  border-radius: 4px;
+  height: 44px;
+  margin-top: 8px;
+  width: 274px;
+  padding: 10px;
+  border: 2px solid rgb(191, 191, 191);
+  background: rgb(191, 191, 191);
+  font-size: 1em;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: rgb(252, 252, 252);
+}
