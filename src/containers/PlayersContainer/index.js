@@ -104,7 +104,7 @@ class PlayersContainer extends Component {
             <h2>Substitutes</h2>
             <section className='substitutes-cards-container'>
               <PlayerCards
-                players={this.state.players.slice(0, 10)}
+                players={this.state.players.slice(10)}
                 handleNameChange={this.handleNameChange}
                 handleAttributeChange={this.handleAttributeChange}
               />
