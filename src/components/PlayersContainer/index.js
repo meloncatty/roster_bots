@@ -103,8 +103,11 @@ class PlayersContainer extends Component {
           <div className='substitutes-container'>
             <h2>Substitutes</h2>
             <section className='substitutes-cards-container'>
-              {/* add props */}
-              <PlayerCards players={this.state.players.slice(10)} />
+              <PlayerCards
+                players={this.state.players.slice(0, 10)}
+                handleNameChange={this.handleNameChange}
+                handleAttributeChange={this.handleAttributeChange}
+              />
             </section>
           </div>
         </div>
