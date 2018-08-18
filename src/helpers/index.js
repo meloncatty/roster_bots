@@ -28,9 +28,9 @@ export const checkDupes = (player, players) => {
 }
 
 export const getAttributeTotal = stats => {
-    const add = (x, y) => x + y
-    return stats.reduce(add)
-  }
+  const add = (x, y) => x + y
+  return stats.reduce(add)
+}
 
 export const generatePlayers = () => {
   let playerNames = []

@@ -2,7 +2,7 @@ import React from 'react'
 import roboAvatar from '../../assets/robot_avatar00.png'
 import './styles.css'
 
-const PlayerCards = props =>  {
+const PlayerCards = props => {
   const { players } = props
   return players.map((player, index) => {
     return (

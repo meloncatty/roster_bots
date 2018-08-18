@@ -48,7 +48,7 @@ class PlayersContainer extends Component {
       } else {
         this.state.players.forEach(player => {
           if (player.error) {
-              player.error = false
+            player.error = false
           }
         })
         person.error = false
@@ -83,7 +83,7 @@ class PlayersContainer extends Component {
     }
   }
 
-  render() {
+  render () {
     return (
       <main className='cards-container'>
         <h1>{this.props.teamName}</h1>
