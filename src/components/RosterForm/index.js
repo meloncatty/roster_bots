@@ -31,22 +31,22 @@ class RosterForm extends Component {
           className='roster-form-label'>
             Create a Team
         </label>
-          <input
-            id='team-name'
-            type='text'
-            name='teamName'
-            placeholder='Team Name'
-            className='team-name-input'
-            onChange={this.handleOnChange}
-            required
-          />
-          <button
-            type='submit'
-            disabled={!this.state.teamName}
-            className='submit-roster-button'
-          >
+        <input
+          id='team-name'
+          type='text'
+          name='teamName'
+          placeholder='Team Name'
+          className='team-name-input'
+          onChange={this.handleOnChange}
+          required
+        />
+        <button
+          type='submit'
+          disabled={!this.state.teamName}
+          className='submit-roster-button'
+        >
             submit
-          </button>
+        </button>
       </form>
     )
   }

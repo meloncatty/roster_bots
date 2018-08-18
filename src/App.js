@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 import { Route } from 'react-router-dom'
 import { RosterForm, PlayersContainer } from './components'
 import './styles.css'
