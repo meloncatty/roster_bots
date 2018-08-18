@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { PlayerCards } from '../'
+import { PlayerCards } from '../../components/'
 import './styles.css'
 import * as helpers from '../../helpers'
 

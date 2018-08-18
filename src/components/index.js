@@ -1,9 +1,7 @@
-import RosterForm from './RosterForm'
+import App from './App'
 import PlayerCards from './PlayerCards'
-import PlayersContainer from './PlayersContainer'
 
 export {
-  RosterForm,
-  PlayerCards,
-  PlayersContainer
+  App,
+  PlayerCards
 }
