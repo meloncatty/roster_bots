@@ -80,6 +80,17 @@ class PlayersContainer extends Component {
       this.setState({
         players: this.state.players
       })
+    } else {
+      this.state.players.forEach(player => {
+        if (player.error) {
+          player.error = false
+        }
+      })
+      player.error = false
+
+      this.setState({
+        players: this.state.players
+      })
     }
   }
 
