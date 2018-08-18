@@ -1,6 +1,6 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 import { Route } from 'react-router-dom'
-import { RosterForm, PlayersContainer } from './components'
+import { RosterForm, PlayersContainer } from '../../containers'
 import './styles.css'
 
 const App = () => {

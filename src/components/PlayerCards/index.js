@@ -11,7 +11,9 @@ const PlayerCards = props => {
           <h2 className='player-name'>
             <input
               className='player-name-input'
-              onChange={(e) => props.handleNameChange(e, player)}
+              onChange={
+                e => props.handleNameChange(e, player)
+              }
               type='text'
               defaultValue={player.name}
               required

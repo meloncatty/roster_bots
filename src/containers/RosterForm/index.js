@@ -26,24 +26,27 @@ class RosterForm extends Component {
   render () {
     return (
       <form className='roster-form' onSubmit={this.handleSubmit}>
-        <label htmlFor='team-name' className='roster-form-label'>Create a Team</label>
-
-          <input
-            id='team-name'
-            type='text'
-            name='teamName'
-            placeholder='Team Name'
-            className='team-name-input'
-            onChange={this.handleOnChange}
-            required />
-          <button
-            type='submit'
-            disabled={!this.state.teamName}
-            className='submit-roster-button'
-          >
+        <label
+          htmlFor='team-name'
+          className='roster-form-label'>
+            Create a Team
+        </label>
+        <input
+          id='team-name'
+          type='text'
+          name='teamName'
+          placeholder='Team Name'
+          className='team-name-input'
+          onChange={this.handleOnChange}
+          required
+        />
+        <button
+          type='submit'
+          disabled={!this.state.teamName}
+          className='submit-roster-button'
+        >
             submit
-          </button>
-
+        </button>
       </form>
     )
   }
