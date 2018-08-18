@@ -1,5 +1,5 @@
 import React from 'react'
-import roboAvatar from '../../assets/robot_avatar00.png'
+import roboAvatar from '../../assets/Robot.svg'
 import './styles.css'
 
 const PlayerCards = props => {
@@ -10,6 +10,7 @@ const PlayerCards = props => {
         <div className='player-card-heading'>
           <h2 className='player-name'>
             <input
+              className='player-name-input'
               onChange={(e) => props.handleNameChange(e, player)}
               type='text'
               defaultValue={player.name}

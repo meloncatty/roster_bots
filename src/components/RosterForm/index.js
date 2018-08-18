@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import getTeamName from '../../actions'
+import './styles.css'
 
 class RosterForm extends Component {
   constructor (props) {
@@ -24,20 +25,26 @@ class RosterForm extends Component {
 
   render () {
     return (
-      <section>
-        <h3>Create a team</h3>
-        <form onSubmit={this.handleSubmit}>
-          <label htmlFor='team-name'>Team Name</label>
+      <form className='roster-form' onSubmit={this.handleSubmit}>
+        <label htmlFor='team-name' className='roster-form-label'>Create a Team</label>
+
           <input
             id='team-name'
             type='text'
             name='teamName'
-            placeholder='Champs'
+            placeholder='Team Name'
+            className='team-name-input'
             onChange={this.handleOnChange}
             required />
-          <button type='submit' disabled={!this.state.teamName}>submit</button>
-        </form>
-      </section>
+          <button
+            type='submit'
+            disabled={!this.state.teamName}
+            className='submit-roster-button'
+          >
+            submit
+          </button>
+
+      </form>
     )
   }
 }

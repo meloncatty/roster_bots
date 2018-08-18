@@ -1,8 +1,13 @@
 .player-attribute-input {
   width: 35px;
-  padding: 2px;
+  padding: 3px;
   margin-left: 5px;
+  font-size: .8em;
   outline: none;
+  text-align: center;
+  border: 1px solid rgb(34, 49, 63);
+  color: rgb(34, 49, 63);
+  border-radius: 4px;
 }
 
 .error {
@@ -23,10 +28,22 @@
   margin: 0;
 }
 
+.player-name-input {
+  color: rgb(34, 49, 63);
+  border: 1px solid rgb(34, 49, 63);
+  border-radius: 4px;
+  padding: 8px;
+  font-size: .7em;
+  text-align: center;
+  outline: none;
+}
+
 .player-attribute {
   font-size: 1em;
+  font-weight: normal;
   padding: 0;
   margin: 0;
+  color: rgb(34, 49, 63);
 }
 
 .player-avatar-container {
@@ -36,9 +53,10 @@
 }
 
 .player-card {
-  border: 1px solid #888;
+  border: 1px solid rgb(34, 49, 63);
   border-radius: 5px;
   display: flex;
+  align-items: center;
   flex-direction: column;
   justify-content: space-around;
   width: 200px;

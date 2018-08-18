@@ -1,24 +1,51 @@
 h1 {
   align-self: center;
+  font-size: 2.5em;
+  color: rgb(34, 49, 63);
 }
 
 h2 {
-  margin: 0 0 0 12px;
   padding: 0;
+  margin: 0;
+  margin: 40px 0 10px 0;
+  font-size: 1.8em;
+  color: rgb(34, 49, 63);
 }
 
-.cards-container {
+.page-container {
   display: flex;
   flex-direction: column;
-  padding: 20px;
 }
 
 .starters-container {
   display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.starters-cards-container {
+  display: flex;
+  justify-content: center;
   flex-wrap: wrap;
 }
 
 .substitutes-container {
   display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.substitutes-cards-container {
+  display: flex;
+  justify-content: center;
   flex-wrap: wrap;
+}
+
+.team-name-header {
+  display: flex;
+  justify-content: center;
+  height: 100px;
+  background: rgb(92, 151, 191);
 }

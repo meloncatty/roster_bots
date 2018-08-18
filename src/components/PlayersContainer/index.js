@@ -85,25 +85,30 @@ class PlayersContainer extends Component {
 
   render () {
     return (
-      <main className='cards-container'>
-        <h1>{this.props.teamName}</h1>
-        <div>
-          <h2>Starters</h2>
-          <section className='starters-container'>
-            <PlayerCards
-              players={this.state.players.slice(0, 10)}
-              handleNameChange={this.handleNameChange}
-              handleAttributeChange={this.handleAttributeChange}
-            />
-          </section>
+      <div className='page-container'>
+        <div className='team-name-header'>
+          <h1>{this.props.teamName}</h1>
         </div>
-        <div>
-          <h2>Substitutes</h2>
-          <section className='substitutes-container'>
-            <PlayerCards players={this.state.players.slice(10)} />
-          </section>
+        <div className='cards-content-container'>
+          <div className='starters-container'>
+            <h2>Starters</h2>
+            <section className='starters-cards-container'>
+              <PlayerCards
+                players={this.state.players.slice(0, 10)}
+                handleNameChange={this.handleNameChange}
+                handleAttributeChange={this.handleAttributeChange}
+              />
+            </section>
+          </div>
+          <div className='substitutes-container'>
+            <h2>Substitutes</h2>
+            <section className='substitutes-cards-container'>
+              {/* add props */}
+              <PlayerCards players={this.state.players.slice(10)} />
+            </section>
+          </div>
         </div>
-      </main>
+      </div>
     )
   }
 }
