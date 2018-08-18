@@ -1,10 +1,10 @@
 import React from 'react'
-import { RosterForm, StarterCards } from './components'
+import { PlayersContainer } from './components'
 
 
 const App = () => {
   return (
-      <StarterCards />
+      <PlayersContainer />
   )
 }
 
