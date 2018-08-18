@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import faker from 'faker'
 import * as helpers from '../../helpers'
 import roboAvatar from '../../assets/robot_avatar00.png'
 import './styles.css'
@@ -14,23 +13,9 @@ class StarterCards extends Component {
   }
 
   componentDidMount () {
-    this.generatePlayers()
-  }
-
-  getAttributeTotal = stats => {
-    const add = (x, y) => x + y
-    return stats.reduce(add)
-  }
-
-  checkDupes = player => {
-    return this.state.players.find(
-      person => (
-        person.speed === player.speed &&
-        person.strength === player.strength &&
-        person.agility === player.agility &&
-        person.name !== player.name
-      )
-    )
+    this.setState({
+      players: helpers.generatePlayers(10)
+    })
   }
 
   checkNameDupes = player => {
@@ -39,46 +24,9 @@ class StarterCards extends Component {
     )
   }
 
-  generatePlayers = () => {
-    let playerNames = []
-    let players = []
-
-    while (playerNames.length < 10) {
-      let randomName = faker.name.findName()
-      if (randomName.length < 16) {
-        playerNames.push(randomName)
-      }
-    }
-
-    playerNames.forEach(player => {
-      let stats = []
-
-      while (stats.length < 3) {
-        stats.push(Math.floor(Math.random() * 33))
-      }
-      const total = this.getAttributeTotal(stats)
-
-      if (total < 100) {
-        const newPlayer = {
-          name: player,
-          speed: stats[0],
-          agility: stats[1],
-          strength: stats[2],
-          id: helpers.generateUUID(),
-          error: false
-        }
-        const isDupe = this.checkDupes(newPlayer)
-        if (!isDupe) {
-          players.push(newPlayer)
-        }
-      }
-    })
-    this.setState({ players })
-  }
-
   handleAttributeChange = (e, player) => {
     const stats = Object.values(player).slice(1, 4)
-    let total = this.getAttributeTotal(stats)
+    let total = helpers.getAttributeTotal(stats)
 
     const person = this.state.players.find(person => person.name === player.name)
     if (total < 100) {
@@ -88,7 +36,7 @@ class StarterCards extends Component {
         players: this.state.players
       })
 
-      const isDupe = this.checkDupes(person)
+      const isDupe = helpers.checkDupes(person)
       if (isDupe) {
         isDupe.error = true
         person.error = true
